@@ -6,15 +6,20 @@ class AddItem extends React.Component{
             count:1
         }
     }
-        render(){
-            return(
-            <div>
-              <button>+</button>
-            {this.state.count}
-              <button>-</button>
-            </div>
-            )
-        }
-
+    increment=()=>{
+      this.setState({count:this.state.count+1})
     }
-export default AddItem;
+    decrement=()=>{
+        this.setState({count:this.state.count-1})
+      }
+    render(){
+        return(
+            <div>
+                <button onClick={this.increment}>+</button>
+                <h4>{this.state.count}</h4> 
+                <button onClick={this.decrement}>-</button>
+            </div>
+        )
+    }
+}
+export default AddItem

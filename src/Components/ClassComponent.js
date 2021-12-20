@@ -12,6 +12,7 @@ class ProductCatalogClass extends React.Component{
        //bind it in the event handler {this.toggleLoginButton.bind(this)}
     }
     toggleLoginButton=()=>{
+       
        this.setState({isLoggedIn:!this.state.isLoggedIn})
     }
     render(){

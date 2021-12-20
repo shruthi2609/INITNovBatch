@@ -1,10 +1,12 @@
 import { IntroDetails } from "./Components/IntroDetails"
 import { ProductCatalog } from "./Components/ProductCatalog"
 import ProductCatalogClass from "./Components/ClassComponent"
+import TodoComponent from './Components/TodoComponent'
+
 export const App=()=>{
   return(
   <div>
-<ProductCatalogClass></ProductCatalogClass>
+<TodoComponent></TodoComponent>
 
 </div>
   )
