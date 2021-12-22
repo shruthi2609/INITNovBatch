@@ -4,19 +4,29 @@ import Completed from './Completed'
 let todo=[
     {
         title:"complete react session on 20.12.2021",
-        completionStatus:true
+        completionStatus:true,
+        id:1,
+        active:true
     },
     {
         title:"watch a movie",
-        completionStatus:false
+        completionStatus:false,
+        id:2
     },
     {
         title:"complete project",
-        completionStatus:true
+        completionStatus:true,
+        id:3
     },
     {
         title:"upload a youtube video",
-        completionStatus:false
+        completionStatus:false,
+        id:4
+    },
+    {
+        title:"upload a youtube video",
+        completionStatus:false,
+        id:5
     },
 ]
 class TodoComponent extends React.Component{
@@ -25,6 +35,13 @@ class TodoComponent extends React.Component{
         this.state={
             todos:todo
         }
+    }
+    changeCompletionStatus=(todoId)=>{
+        const temp=[...this.state.todos]
+        const obj=temp.find((item)=>item.id===todoId)
+        obj.completionStatus=!obj.completionStatus
+        this.setState({todos:temp})
+        
     }
     getPendingItem=()=>{
         const arr=this.state.todos.filter((item)=>item.completionStatus===false)
@@ -37,8 +54,9 @@ class TodoComponent extends React.Component{
     render(){
         return(
             <div>
-                <Pending items={this.getPendingItem()}> </Pending>
+                <Pending items={this.getPendingItem()} fun1={this.changeCompletionStatus}> </Pending>
                 <Completed items={this.getCompletedItems()}></Completed>
+               
             </div>
         )
     }
