@@ -1,6 +1,7 @@
 import React  from "react";
 import Pending from './Pending'
 import Completed from './Completed'
+import Trash from './Trash'
 let todo=[
     {
         title:"complete react session on 20.12.2021",
@@ -11,22 +12,26 @@ let todo=[
     {
         title:"watch a movie",
         completionStatus:false,
-        id:2
+        id:2,
+        active:true
     },
     {
         title:"complete project",
         completionStatus:true,
-        id:3
+        id:3,
+        active:true
     },
     {
         title:"upload a youtube video",
         completionStatus:false,
-        id:4
+        id:4,
+        active:true
     },
     {
         title:"upload a youtube video",
         completionStatus:false,
-        id:5
+        id:5,
+        active:true
     },
 ]
 class TodoComponent extends React.Component{
@@ -40,8 +45,13 @@ class TodoComponent extends React.Component{
         const temp=[...this.state.todos]
         const obj=temp.find((item)=>item.id===todoId)
         obj.completionStatus=!obj.completionStatus
-        this.setState({todos:temp})
-        
+        this.setState({todos:temp})  
+    }
+    changeActiveStatus=(todoId)=>{
+        const temp=[...this.state.todos]
+        const obj=temp.find((item)=>item.id===todoId)
+        obj.active=!obj.active
+        this.setState({todos:temp})  
     }
     getPendingItem=()=>{
         const arr=this.state.todos.filter((item)=>item.completionStatus===false)
@@ -51,12 +61,16 @@ class TodoComponent extends React.Component{
         const arr=this.state.todos.filter((item)=>item.completionStatus===true)
         return arr;
     }
+    getDeletedItems=()=>{
+        const arr=this.state.todos.filter((item)=>item.active===true)
+        return arr;
+    }
     render(){
         return(
             <div>
-                <Pending items={this.getPendingItem()} fun1={this.changeCompletionStatus}> </Pending>
+                <Pending items={this.getPendingItem()} fun1={this.changeCompletionStatus} fun2={this.changeActiveStatus}> </Pending>
                 <Completed items={this.getCompletedItems()}></Completed>
-               
+                <Trash items={this.getDeletedItems()}></Trash>
             </div>
         )
     }

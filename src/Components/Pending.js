@@ -2,19 +2,25 @@ import React from "react";
 class Pending extends React.Component{
     constructor(props){
         super(props)
-     
     }
     render(){
+        const myStyle={
+            color:"aqua",
+            fontFamily:"Arial"
+        }
         return(
             <div>
-                <h2> Pending Tasks are :</h2>
+                <h2 style={{backgroundColor:"red"}}> Pending Tasks are :</h2>
                 {
-                    this.props.items.map((item)=>
-                    <div>
+                    this.props.items.map((item)=>(
+                        (item.active)?
+                        <div style={myStyle}>
                          <p>{item.title}</p>
-                         <button onClick={()=>this.props.fun1(item.id)}>done</button>
-                         <button>delete</button>
-                    </div>
+                         <button className="btn-primary"
+                         onClick={()=>this.props.fun1(item.id)}>done</button>
+                         <button  onClick={()=>this.props.fun2(item.id)}>delete</button>
+                         </div> : <></>
+                    )
                    )
                 }
             </div>

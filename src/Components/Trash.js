@@ -1,12 +1,12 @@
 import React from "react";
-class Completed extends React.Component{
+class Trash extends React.Component{
     constructor(props){
         super(props)
     }
     render(){
         return(
             <div>
-                <h2> Completed Tasks are :</h2>
+                <h2> Deleted Items are :</h2>
                 {
                     this.props.items.map((item)=>
                     <div>
@@ -20,4 +20,4 @@ class Completed extends React.Component{
     }
     
 }
-export default Completed;
+export default Trash;
