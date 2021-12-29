@@ -1,9 +1,10 @@
+import { IntroDetails } from "./IntroDetails"
 export const ProductCatalog=(props)=>{
     return(
   <>
-  <img src={props.imgSource}></img>
+  
   <a href={props.prodLink}>Buy here</a>
-  <h3>Price : {props.price}</h3>
+<IntroDetails price={props.price}></IntroDetails>
   </>
     )
   }

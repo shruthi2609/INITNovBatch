@@ -10,6 +10,9 @@ export const App=()=>{
   return(
   <div>
 <ImageSearchAPI></ImageSearchAPI>
+<ProductCatalog prodLink="https://amazon.in"
+price="Rs.5000"
+></ProductCatalog>
 
 </div>
   )
