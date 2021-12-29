@@ -4,11 +4,12 @@ import ProductCatalogClass from "./Components/ClassComponent"
 import TodoComponent from './Components/TodoComponent'
 import LifeCycleMethods from "./Components/LifeCycleMethods"
 import TodoAPI from "./Components/TodoApI"
+import ImageSearchAPI from "./Components/ImageSearchAPI"
 
 export const App=()=>{
   return(
   <div>
-<TodoAPI></TodoAPI>
+<ImageSearchAPI></ImageSearchAPI>
 
 </div>
   )
