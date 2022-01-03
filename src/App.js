@@ -5,14 +5,15 @@ import TodoComponent from './Components/TodoComponent'
 import LifeCycleMethods from "./Components/LifeCycleMethods"
 import TodoAPI from "./Components/TodoApI"
 import ImageSearchAPI from "./Components/ImageSearchAPI"
+import HooksEg from "./Components/HooksEg"
+import ChatEg from "./Components/ChatEg"
+import CounterHooks from "./Components/CounterHooks"
+import ImageAPIHooks from "./Components/ImageAPIHooks"
 
 export const App=()=>{
   return(
   <div>
-<ImageSearchAPI></ImageSearchAPI>
-<ProductCatalog prodLink="https://amazon.in"
-price="Rs.5000"
-></ProductCatalog>
+<ImageAPIHooks></ImageAPIHooks>
 
 </div>
   )
