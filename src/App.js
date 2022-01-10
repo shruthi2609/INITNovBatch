@@ -9,11 +9,16 @@ import HooksEg from "./Components/HooksEg"
 import ChatEg from "./Components/ChatEg"
 import CounterHooks from "./Components/CounterHooks"
 import ImageAPIHooks from "./Components/ImageAPIHooks"
+import HookLifeCycle from "./Components/HookLifeCycle"
+import NewsAPIHooks from "./Components/NewsAPIHooks"
+import Profile from "./Components/Profile"
+import Login from "./Components/Login"
 
 export const App=()=>{
   return(
   <div>
-<ImageAPIHooks></ImageAPIHooks>
+<Profile></Profile>
+<Login></Login>
 
 </div>
   )
@@ -21,3 +26,4 @@ export const App=()=>{
 
 //export default
 //export by component name
+//MVC - MODEL VIEW CONTROLERS
