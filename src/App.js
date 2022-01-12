@@ -13,13 +13,26 @@ import HookLifeCycle from "./Components/HookLifeCycle"
 import NewsAPIHooks from "./Components/NewsAPIHooks"
 import Profile from "./Components/Profile"
 import Login from "./Components/Login"
-
+import LifeCycleMethod from "./Components/LifeCycleMethod"
+import {BrowserRouter as Router, Routes , Route , Link} from "react-router-dom"
+import LoginPage from "./Components/LoginPage"
 export const App=()=>{
   return(
   <div>
-<Profile></Profile>
-<Login></Login>
-
+<Router>
+  <div>
+    <nav>
+      <Link to="/profile">Profile</Link>
+      <Link to="/Login">Login</Link>
+      <Link to="/Imagesearch">Search</Link>
+    </nav>
+    <Routes>
+      <Route path="/profile"></Route>
+      <Route path="/Login" element={<Login></Login>}> </Route>
+      <Route path="/Imagesearch" element={<ImageSearchAPI></ImageSearchAPI>}> </Route>
+    </Routes>
+  </div>
+</Router>
 </div>
   )
 }
