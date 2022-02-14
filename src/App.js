@@ -16,19 +16,21 @@ import Login from "./Components/Login"
 import LifeCycleMethod from "./Components/LifeCycleMethod"
 import {BrowserRouter as Router, Routes , Route , Link} from "react-router-dom"
 import LoginPage from "./Components/LoginPage"
+import SigninForm from "./Components/SigninForm"
 export const App=()=>{
   return(
   <div>
 <Router>
   <div>
     <nav>
-      <Link to="/profile">Profile</Link>
+   { /*  <Link to="/profile">Profile</Link>
+  
+  <Link to="/Imagesearch">Search</Link>*/}
       <Link to="/Login">Login</Link>
-      <Link to="/Imagesearch">Search</Link>
     </nav>
     <Routes>
-      <Route path="/profile"></Route>
-      <Route path="/Login" element={<Login></Login>}> </Route>
+     
+      <Route path="/Login" element={<SigninForm></SigninForm>}> </Route>
       <Route path="/Imagesearch" element={<ImageSearchAPI></ImageSearchAPI>}> </Route>
     </Routes>
   </div>
