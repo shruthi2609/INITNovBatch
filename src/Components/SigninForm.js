@@ -7,6 +7,9 @@ const SigninForm=()=>{
     const [status,setStatus]=useState(false)
     const [msg,setMsg]=useState()
     const navigate=useNavigate()
+    const instance=axios.create({
+        baseURL:"http://localhost:3001"
+    })
   /*  const handleEmail=(e)=>{
         console.log("uname",e.target.value)
         setUsername(e.target.value)
@@ -24,15 +27,17 @@ const SigninForm=()=>{
     const handleLogin=(e)=>{
         e.preventDefault()
         axios.post("http://localhost:3001/signin",{email:username,password:password}).
-        then((res)=>{setStatus(res.data.status)
+        then((res)=>{
+        instance.defaults.headers.common["Authorization"]="Bearer "+res.data.token
+        localStorage.setItem("UserToken",res.data.token)
+        setStatus(res.data.status)
         setMsg(res.data.message)}).catch((err)=>console.log(err))
     }
     const handleNavigate=()=>{
-        navigate("/ImageSearch")
+        navigate("/updateUser")
     }
     return(
         <div>
-          
             <form>
             {
             status?handleNavigate():<h1>Please Login</h1>

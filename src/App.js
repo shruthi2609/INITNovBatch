@@ -17,6 +17,7 @@ import LifeCycleMethod from "./Components/LifeCycleMethod"
 import {BrowserRouter as Router, Routes , Route , Link} from "react-router-dom"
 import LoginPage from "./Components/LoginPage"
 import SigninForm from "./Components/SigninForm"
+import ChangePassword from "./Components/ChangePassword"
 export const App=()=>{
   return(
   <div>
@@ -29,7 +30,7 @@ export const App=()=>{
       <Link to="/Login">Login</Link>
     </nav>
     <Routes>
-     
+     <Route path="/updateUser" element={<ChangePassword></ChangePassword>}></Route>
       <Route path="/Login" element={<SigninForm></SigninForm>}> </Route>
       <Route path="/Imagesearch" element={<ImageSearchAPI></ImageSearchAPI>}> </Route>
     </Routes>
